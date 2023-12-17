@@ -26,8 +26,8 @@ fun agoToText(secondsAgo: Int): String {
 fun minutesAgo(seconds: Int): String {
     val minutes = seconds / 60
     return when {
-        minutes == 1 || minutes % 10 == 1 && minutes != 11 -> "был(а) в сети $minutes минуту назад"
-        minutes in 2..4 || minutes % 10 in 2..4 && minutes !in 12..14 -> "был(а) в сети $minutes минуты назад"
+        minutes % 10 == 1 && minutes != 11 -> "был(а) в сети $minutes минуту назад"
+        minutes % 10 in 2..4 && minutes !in 12..14 -> "был(а) в сети $minutes минуты назад"
         else -> "был(а) в сети $minutes минут назад"
     }
 }
